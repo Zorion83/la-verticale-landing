@@ -1131,6 +1131,7 @@
 
     function handleSubscribe() {
       var input   = document.getElementById('email-input');
+      var btn     = document.querySelector('#subscribe-form button');
       var form    = document.getElementById('subscribe-form');
       var success = document.getElementById('form-success');
       var email   = input ? input.value.trim() : '';
@@ -1143,8 +1144,30 @@
         return;
       }
 
-      form.style.display    = 'none';
-      success.style.display = 'block';
+      btn.disabled    = true;
+      btn.textContent = '…';
+
+      fetch('/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email })
+      })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (data.success) {
+          form.style.display    = 'none';
+          success.style.display = 'block';
+        } else {
+          btn.disabled    = false;
+          btn.textContent = 'Je m\'abonne →';
+          input.style.borderColor = '#e85447';
+          setTimeout(function () { input.style.borderColor = ''; }, 2000);
+        }
+      })
+      .catch(function () {
+        btn.disabled    = false;
+        btn.textContent = 'Je m\'abonne →';
+      });
     }
 
     document.addEventListener('DOMContentLoaded', function () {
