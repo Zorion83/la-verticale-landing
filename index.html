@@ -1076,7 +1076,7 @@
           </div>
 
           <div class="form-success" id="form-success" role="alert">
-            ✓ Parfait ! Vérifie ta boîte mail pour confirmer.
+            ✓ Redirection en cours…
           </div>
 
           <p class="cta-fine">
@@ -1142,7 +1142,6 @@
     })();
 
 
-    /* ── Fallback form handler (bypassed once Beehiiv embed is wired) ── */
     function handleSubscribe() {
       var input   = document.getElementById('email-input');
       var form    = document.getElementById('subscribe-form');
@@ -1160,12 +1159,9 @@
       form.style.display    = 'none';
       success.style.display = 'block';
 
-      /* Uncomment to POST to a custom endpoint:
-      fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email })
-      }); */
+      setTimeout(function () {
+        window.location.href = 'https://laverticale.beehiiv.com/subscribe?email=' + encodeURIComponent(email);
+      }, 600);
     }
 
     document.addEventListener('DOMContentLoaded', function () {
