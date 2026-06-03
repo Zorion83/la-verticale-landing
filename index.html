@@ -428,6 +428,43 @@
     }
     .tier-list li strong { color: var(--text); font-weight: 500; }
 
+    .tier-price {
+      font-size: 0.8rem;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 18px;
+      letter-spacing: 0.02em;
+    }
+
+    /* ─── FAQ ───────────────────────────────────────────────────── */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      max-width: 640px;
+    }
+    .faq-item { background: var(--bg-card); }
+    .faq-item summary {
+      padding: 20px 24px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text);
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; color: var(--gold); font-size: 1.2rem; font-weight: 300; }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-item[open] { background: var(--bg-raised); }
+    .faq-answer { padding: 0 24px 20px; font-size: 0.875rem; color: var(--muted); line-height: 1.7; }
+
     /* ─── EDITIONS ─────────────────────────────────────────────── */
     #editions { background: var(--bg); }
 
@@ -681,7 +718,7 @@
   <nav aria-label="Navigation principale">
     <div class="nav-inner">
       <a href="#" class="nav-logo">La <span>Verticale</span></a>
-      <a href="#cta-final" class="nav-cta">S'abonner</a>
+      <a href="#cta-final" class="nav-cta">Je m'abonne gratuitement</a>
     </div>
   </nav>
 
@@ -691,15 +728,15 @@
     <div class="container">
       <div class="hero-content">
 
-        <div class="hero-eyebrow reveal">Newsletter Finance · Crypto · IA · Du lundi au vendredi</div>
+        <div class="hero-eyebrow reveal">Newsletter quotidienne · Finance · Crypto · IA</div>
 
         <h1 class="hero-title reveal reveal-delay-1">
-          La <span class="gold">Verticale</span>
+          5 minutes pour dominer<br><span class="gold">crypto, macro et IA</span>
         </h1>
 
         <p class="hero-tagline reveal reveal-delay-2">
-          <strong>5 minutes par jour pour ne rien manquer.</strong><br>
-          La newsletter finance pour particuliers et professionnels qui veulent une longueur d'avance sur crypto, macro et IA.
+          Chaque matin du lundi au vendredi, l'essentiel de la finance décrypté en 5 minutes.<br>
+          <strong>Crypto, macro, IA</strong> — sans bruit, sans remplissage.
         </p>
 
         <div class="hero-badges reveal reveal-delay-2">
@@ -773,6 +810,7 @@
         <div class="tier-card premium reveal reveal-delay-1">
           <span class="tier-badge paid">Premium</span>
           <div class="tier-title">Pour aller jusqu'au sommet</div>
+          <div class="tier-price">Prix annoncé au lancement</div>
           <ul class="tier-list">
             <li>Tout le contenu gratuit, plus :</li>
             <li><strong>Analyse approfondie</strong> de l'opportunité : chiffres, risques, étapes</li>
@@ -788,12 +826,40 @@
   </section>
 
 
+  <!-- ══ FAQ ══════════════════════════════════════════════════════ -->
+  <section id="faq" style="background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <span class="section-label reveal">Questions fréquentes</span>
+      <h2 class="section-title reveal">Ce que tu te demandes sûrement</h2>
+
+      <div class="faq-list reveal">
+
+        <details class="faq-item">
+          <summary>C'est vraiment gratuit ?</summary>
+          <p class="faq-answer">Oui. Le niveau gratuit est et restera gratuit. Aucune carte bancaire requise pour s'inscrire.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>À quelle fréquence vais-je recevoir la newsletter ?</summary>
+          <p class="faq-answer">Chaque matin du lundi au vendredi, une édition dans ta boîte. Condensée, actionnelle, sans remplissage.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Puis-je me désinscrire facilement ?</summary>
+          <p class="faq-answer">Oui. Un clic en bas de chaque email suffit. Sans formulaire, sans délai, sans question.</p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+
   <!-- ══ EDITIONS ════════════════════════════════════════════════ -->
   <section id="editions">
     <div class="container">
-      <span class="section-label reveal">Dernières éditions</span>
-      <h2 class="section-title reveal">Ce qu'on a décrypté cette semaine</h2>
-      <p class="section-sub reveal">Un aperçu des dernières éditions. Gratuit, sans inscription.</p>
+      <span class="section-label reveal">Au programme</span>
+      <h2 class="section-title reveal">Les sujets qui seront traités</h2>
+      <p class="section-sub reveal">La Verticale est en cours de lancement. Voici un aperçu des thèmes couverts dès la première édition.</p>
 
       <div class="editions-grid">
 
@@ -803,14 +869,12 @@
           </div>
           <div class="edition-list">
             <article class="edition-item">
-              <div class="edition-date">27 mai 2026</div>
-              <div class="edition-title">Bitcoin à 90k : ce que ça change pour ton PEA</div>
-              <p class="edition-teaser">Les implications concrètes pour un investisseur particulier en 2026.</p>
+              <div class="edition-title">Bitcoin, DeFi, régulation — ce qui compte vraiment</div>
+              <p class="edition-teaser">Prix, on-chain, macro-crypto : les signaux filtrés pour que tu comprennes pourquoi ça bouge, pas juste de combien.</p>
             </article>
             <article class="edition-item">
-              <div class="edition-date">26 mai 2026</div>
-              <div class="edition-title">Altcoins Q2 : 3 signaux à surveiller</div>
-              <p class="edition-teaser">Ce que les pros regardent en ce moment sur les marchés alternatifs.</p>
+              <div class="edition-title">Altcoins et narratives du moment</div>
+              <p class="edition-teaser">Ce que les pros surveillent sur les marchés alternatifs, sans bruit ni hype, avec le contexte pour décider.</p>
             </article>
           </div>
         </div>
@@ -821,14 +885,12 @@
           </div>
           <div class="edition-list">
             <article class="edition-item">
-              <div class="edition-date">28 mai 2026</div>
-              <div class="edition-title">Taux BCE : ce que ça signifie pour ton épargne</div>
-              <p class="edition-teaser">Décryptage de la décision et impact direct sur livrets et obligations.</p>
+              <div class="edition-title">Taux, inflation, banques centrales</div>
+              <p class="edition-teaser">Décryptage des décisions BCE et Fed et leur impact direct sur ton épargne, tes obligations et tes arbitrages.</p>
             </article>
             <article class="edition-item">
-              <div class="edition-date">23 mai 2026</div>
-              <div class="edition-title">Immobilier 2026 : les niches que les pros regardent</div>
-              <p class="edition-teaser">Analyse des segments encore porteurs malgré la correction.</p>
+              <div class="edition-title">Marchés actions et économie réelle</div>
+              <p class="edition-teaser">Les indicateurs qui bougent vraiment les marchés, lus sans jargon et traduits en implications concrètes.</p>
             </article>
           </div>
         </div>
@@ -839,14 +901,12 @@
           </div>
           <div class="edition-list">
             <article class="edition-item">
-              <div class="edition-date">29 mai 2026</div>
-              <div class="edition-title">Les 5 outils IA qui font gagner du temps en 2026</div>
-              <p class="edition-teaser">Sélection testée, actionnnable dès aujourd'hui pour ta veille.</p>
+              <div class="edition-title">Outils IA appliqués à la finance et à la veille</div>
+              <p class="edition-teaser">Sélection testée et actionnable dès aujourd'hui : ce qui fait gagner du temps, ce qui ne vaut pas le clic.</p>
             </article>
             <article class="edition-item">
-              <div class="edition-date">22 mai 2026</div>
-              <div class="edition-title">GPT-5 vs Claude : lequel pour ta veille business ?</div>
-              <p class="edition-teaser">Comparatif pratique pour non-techniciens, cas d'usage finance.</p>
+              <div class="edition-title">Modèles, agents et impacts économiques</div>
+              <p class="edition-teaser">Les évolutions qui reconfigurent les marchés et les métiers, expliquées pour un lecteur non-technicien.</p>
             </article>
           </div>
         </div>
@@ -855,37 +915,39 @@
     </div>
   </section>
 
-  <!-- ══ SOCIAL PROOF ═════════════════════════════════════════════ -->
-  <section id="proof" aria-label="Preuves sociales">
-    <div class="container">
+  <!-- ══ EARLY ADOPTERS ═══════════════════════════════════════════ -->
+  <section id="proof" aria-label="Lancement">
+    <div class="container" style="text-align: center;">
 
-      <div class="proof-number reveal">2 400+</div>
-      <p class="proof-label reveal">lecteurs nous rejoignent chaque mardi matin</p>
+      <div class="proof-number reveal">Lancement</div>
+      <p class="proof-label reveal">La Verticale démarre bientôt — sois parmi les premiers lecteurs</p>
 
-      <div class="proof-testimonials">
+      <div class="proof-testimonials" style="margin-top: 48px;">
 
-        <div class="testimonial reveal">
-          <div class="testimonial-stars" aria-label="5 étoiles">★★★★★</div>
-          <p class="testimonial-text">"La seule newsletter finance que je lis jusqu'au bout. Dense, honnête, actionnable. C'est rare."</p>
-          <div class="testimonial-author">Thomas R.</div>
-          <div class="testimonial-role">Consultant indépendant, Lyon</div>
+        <div class="testimonial reveal" style="text-align: left;">
+          <div class="promise-icon" aria-hidden="true" style="margin-bottom: 16px;">⚡</div>
+          <div class="promise-title" style="margin-bottom: 8px;">Accès anticipé</div>
+          <p class="testimonial-text" style="font-style: normal;">Les premiers abonnés reçoivent la newsletter dès la première édition, avant l'ouverture publique.</p>
         </div>
 
-        <div class="testimonial reveal reveal-delay-1">
-          <div class="testimonial-stars" aria-label="5 étoiles">★★★★★</div>
-          <p class="testimonial-text">"J'ai utilisé l'analyse sur les SCPI du numéro 12 pour réorienter une partie de ma trésorerie. Merci."</p>
-          <div class="testimonial-author">Camille D.</div>
-          <div class="testimonial-role">Fondatrice, e-commerce</div>
+        <div class="testimonial reveal reveal-delay-1" style="text-align: left;">
+          <div class="promise-icon" aria-hidden="true" style="margin-bottom: 16px;">🎯</div>
+          <div class="promise-title" style="margin-bottom: 8px;">Tu shapes le contenu</div>
+          <p class="testimonial-text" style="font-style: normal;">En phase de lancement, tes retours influencent directement les sujets couverts et le format de l'édition.</p>
         </div>
 
-        <div class="testimonial reveal reveal-delay-2">
-          <div class="testimonial-stars" aria-label="5 étoiles">★★★★★</div>
-          <p class="testimonial-text">"Le rapport signal/bruit est imbattable. En 10 minutes par semaine je suis mieux informé qu'avant en 2h."</p>
-          <div class="testimonial-author">Alexis M.</div>
-          <div class="testimonial-role">Développeur freelance, Paris</div>
+        <div class="testimonial reveal reveal-delay-2" style="text-align: left;">
+          <div class="promise-icon" aria-hidden="true" style="margin-bottom: 16px;">🔒</div>
+          <div class="promise-title" style="margin-bottom: 8px;">Tarif fondateur</div>
+          <p class="testimonial-text" style="font-style: normal;">Les early adopters bénéficieront du tarif premium le plus bas, garanti à vie. Disponible uniquement au lancement.</p>
         </div>
 
       </div>
+
+      <div style="margin-top: 40px;">
+        <a href="#cta-final" class="btn-primary reveal">Rejoindre en avant-première →</a>
+      </div>
+
     </div>
   </section>
 
@@ -958,8 +1020,7 @@
       </nav>
 
       <p class="footer-copy">
-        © 2026 La Verticale · Tous droits réservés ·
-        SIRET&nbsp;: [X&nbsp;XXX&nbsp;XXX&nbsp;XXX&nbsp;XXXXX]
+        © 2026 La Verticale · Tous droits réservés
       </p>
 
     </div>
