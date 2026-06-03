@@ -533,7 +533,7 @@
       line-height: 1.55;
     }
 
-    /* ─── SOCIAL PROOF ─────────────────────────────────────────── */
+    /* ─── EARLY ADOPTER ────────────────────────────────────────── */
     #proof {
       background: var(--bg-card);
       border-top: 1px solid var(--border);
@@ -541,51 +541,125 @@
       text-align: center;
     }
 
-    .proof-number {
-      font-size: clamp(3rem, 10vw, 5.5rem);
-      font-weight: 900;
-      letter-spacing: -0.05em;
+    .early-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(232, 197, 71, 0.09);
+      border: 1px solid rgba(232, 197, 71, 0.22);
       color: var(--gold);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-    .proof-label {
-      font-size: 1.05rem;
-      color: var(--muted);
-      margin-bottom: 52px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 28px;
     }
 
-    .proof-testimonials {
+    .early-title {
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .early-title .gold { color: var(--gold); }
+
+    .early-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 52px;
+      line-height: 1.65;
+    }
+    .early-sub strong { color: var(--text); font-weight: 600; }
+
+    .early-perks {
       display: grid;
       grid-template-columns: 1fr;
       gap: 16px;
       text-align: left;
+      margin-bottom: 40px;
     }
     @media (min-width: 640px) {
-      .proof-testimonials { grid-template-columns: repeat(3, 1fr); }
+      .early-perks { grid-template-columns: repeat(3, 1fr); }
     }
 
-    .testimonial {
+    .early-perk {
       background: var(--bg-raised);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 24px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: border-color var(--transition);
     }
-    .testimonial-stars {
-      color: var(--gold);
-      font-size: 0.78rem;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
+    .early-perk:hover { border-color: rgba(232, 197, 71, 0.25); }
+
+    .early-perk-icon {
+      font-size: 1.4rem;
+      line-height: 1;
     }
-    .testimonial-text {
-      font-size: 0.875rem;
+
+    .early-perk-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .early-perk-desc {
+      font-size: 0.82rem;
       color: var(--muted);
-      line-height: 1.7;
-      font-style: italic;
-      margin-bottom: 16px;
+      line-height: 1.6;
     }
-    .testimonial-author { font-size: 0.8rem; font-weight: 600; color: var(--text); }
-    .testimonial-role   { font-size: 0.75rem; color: var(--muted); }
+
+    .early-launch-banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(232, 197, 71, 0.07);
+      border: 1px solid rgba(232, 197, 71, 0.2);
+      border-radius: 10px;
+      padding: 16px 28px;
+      margin-bottom: 32px;
+    }
+
+    .early-launch-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 3px rgba(232, 197, 71, 0.2);
+      flex-shrink: 0;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { box-shadow: 0 0 0 3px rgba(232, 197, 71, 0.2); }
+      50%       { box-shadow: 0 0 0 6px rgba(232, 197, 71, 0.08); }
+    }
+
+    .early-launch-text {
+      font-size: 0.88rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+    .early-launch-text strong { color: var(--gold); }
+
+    .early-cta-link {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(232, 197, 71, 0.3);
+      padding-bottom: 2px;
+      transition: border-color var(--transition), color var(--transition);
+    }
+    .early-cta-link:hover { color: #f0d060; border-color: #f0d060; }
 
     /* ─── CTA FINAL ────────────────────────────────────────────── */
     #cta-final { background: var(--bg); text-align: center; }
@@ -915,38 +989,49 @@
     </div>
   </section>
 
-  <!-- ══ EARLY ADOPTERS ═══════════════════════════════════════════ -->
-  <section id="proof" aria-label="Lancement">
-    <div class="container" style="text-align: center;">
+  <!-- ══ EARLY ADOPTER ════════════════════════════════════════════ -->
+  <section id="proof" aria-label="Lancement en cours">
+    <div class="container">
 
-      <div class="proof-number reveal">Lancement</div>
-      <p class="proof-label reveal">La Verticale démarre bientôt — sois parmi les premiers lecteurs</p>
+      <div class="early-eyebrow reveal">▲ Lancement en cours</div>
 
-      <div class="proof-testimonials" style="margin-top: 48px;">
+      <h2 class="early-title reveal">Sois parmi les <span class="gold">premiers lecteurs</span>.</h2>
 
-        <div class="testimonial reveal" style="text-align: left;">
-          <div class="promise-icon" aria-hidden="true" style="margin-bottom: 16px;">⚡</div>
-          <div class="promise-title" style="margin-bottom: 8px;">Accès anticipé</div>
-          <p class="testimonial-text" style="font-style: normal;">Les premiers abonnés reçoivent la newsletter dès la première édition, avant l'ouverture publique.</p>
+      <p class="early-sub reveal">
+        La Verticale démarre. Pas de chiffres gonflés, pas de témoignages inventés.<br>
+        <strong>Ce que tu as, c'est un avantage réel : rejoindre avant tout le monde.</strong>
+      </p>
+
+      <div class="early-perks">
+
+        <div class="early-perk reveal">
+          <div class="early-perk-icon">🔖</div>
+          <div class="early-perk-title">Accès dès la première édition</div>
+          <p class="early-perk-desc">Tu reçois le numéro 1 dans ta boîte. Pas d'attente, pas de liste d'attente.</p>
         </div>
 
-        <div class="testimonial reveal reveal-delay-1" style="text-align: left;">
-          <div class="promise-icon" aria-hidden="true" style="margin-bottom: 16px;">🎯</div>
-          <div class="promise-title" style="margin-bottom: 8px;">Tu shapes le contenu</div>
-          <p class="testimonial-text" style="font-style: normal;">En phase de lancement, tes retours influencent directement les sujets couverts et le format de l'édition.</p>
+        <div class="early-perk reveal reveal-delay-1">
+          <div class="early-perk-icon">🎙️</div>
+          <div class="early-perk-title">Ton avis compte vraiment</div>
+          <p class="early-perk-desc">Les premiers lecteurs façonnent la newsletter. Ton feedback influence directement les prochaines éditions.</p>
         </div>
 
-        <div class="testimonial reveal reveal-delay-2" style="text-align: left;">
-          <div class="promise-icon" aria-hidden="true" style="margin-bottom: 16px;">🔒</div>
-          <div class="promise-title" style="margin-bottom: 8px;">Tarif fondateur</div>
-          <p class="testimonial-text" style="font-style: normal;">Les early adopters bénéficieront du tarif premium le plus bas, garanti à vie. Disponible uniquement au lancement.</p>
+        <div class="early-perk reveal reveal-delay-2">
+          <div class="early-perk-icon">🔒</div>
+          <div class="early-perk-title">Tarif fondateur garanti</div>
+          <p class="early-perk-desc">Le prix premium augmentera avec l'audience. Les early adopters gardent leur tarif d'entrée à vie.</p>
         </div>
 
       </div>
 
-      <div style="margin-top: 40px;">
-        <a href="#cta-final" class="btn-primary reveal">Rejoindre en avant-première →</a>
+      <div class="early-launch-banner reveal">
+        <div class="early-launch-dot" aria-hidden="true"></div>
+        <p class="early-launch-text">Première édition prévue le <strong>lundi 9 juin 2026</strong></p>
       </div>
+
+      <p class="reveal">
+        <a href="#cta-final" class="early-cta-link">Réserver ma place gratuitement →</a>
+      </p>
 
     </div>
   </section>
