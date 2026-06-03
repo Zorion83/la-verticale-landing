@@ -1048,36 +1048,15 @@
 
         <div class="beehiiv-wrapper">
 
-          <!-- // BEEHIIV_EMBED_CODE_HERE //
-               ────────────────────────────────────────────────────
-               Remplace le bloc .fallback-form ci-dessous par ton
-               embed Beehiiv pour activer les abonnements.
-
-               Étapes :
-               1. Connecte-toi sur app.beehiiv.com
-               2. Settings → Publication Details → Embed Form
-               3. Copie le code <script> ou <iframe> généré
-               4. Colle-le ici à la place du .fallback-form
-               ────────────────────────────────────────────────────
-          -->
-
-          <div class="fallback-form" id="subscribe-form">
-            <input
-              type="email"
-              id="email-input"
-              placeholder="ton@email.com"
-              autocomplete="email"
-              aria-label="Adresse e-mail"
-              required
-            />
-            <button type="button" onclick="handleSubscribe()">
-              Je m'abonne →
-            </button>
-          </div>
-
-          <div class="form-success" id="form-success" role="alert">
-            ✓ Redirection en cours…
-          </div>
+          <iframe
+            src="https://embeds.beehiiv.com/pub_93e361b4-4db5-45da-9c55-9a3c5db8ba46"
+            data-test-id="beehiiv-embed"
+            width="100%"
+            height="52"
+            frameborder="0"
+            scrolling="no"
+            style="border-radius:8px; margin:0; background:transparent;"
+          ></iframe>
 
           <p class="cta-fine">
             En t'abonnant tu acceptes de recevoir La Verticale chaque mardi.
@@ -1142,36 +1121,7 @@
     })();
 
 
-    function handleSubscribe() {
-      var input   = document.getElementById('email-input');
-      var form    = document.getElementById('subscribe-form');
-      var success = document.getElementById('form-success');
-      var email   = input ? input.value.trim() : '';
-      var re      = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      if (!re.test(email)) {
-        input.style.borderColor = '#e85447';
-        input.focus();
-        setTimeout(function () { input.style.borderColor = ''; }, 2000);
-        return;
-      }
-
-      form.style.display    = 'none';
-      success.style.display = 'block';
-
-      setTimeout(function () {
-        window.location.href = 'https://laverticale.beehiiv.com/subscribe?email=' + encodeURIComponent(email);
-      }, 600);
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-      var input = document.getElementById('email-input');
-      if (input) {
-        input.addEventListener('keydown', function (e) {
-          if (e.key === 'Enter') handleSubscribe();
-        });
-      }
-    });
+    document.addEventListener('DOMContentLoaded', function () {});
   </script>
 
 </body>
