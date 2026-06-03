@@ -241,6 +241,29 @@
     .hero-sub { font-size: 0.8rem; color: var(--muted); }
     .hero-sub span { color: var(--gold); font-weight: 600; }
 
+    /* ─── Hero badges ──────────────────────────────────────────── */
+    .hero-badges {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(232, 197, 71, 0.08);
+      border: 1px solid rgba(232, 197, 71, 0.2);
+      color: var(--text);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 100px;
+      letter-spacing: 0.02em;
+    }
+
     /* ─── PROMISE ──────────────────────────────────────────────── */
     #promise {
       border-top: 1px solid var(--border);
@@ -600,20 +623,26 @@
     <div class="container">
       <div class="hero-content">
 
-        <div class="hero-eyebrow reveal">Newsletter Finance · Chaque mardi</div>
+        <div class="hero-eyebrow reveal">Newsletter Finance · Crypto · IA · Du lundi au vendredi</div>
 
         <h1 class="hero-title reveal reveal-delay-1">
           La <span class="gold">Verticale</span>
         </h1>
 
         <p class="hero-tagline reveal reveal-delay-2">
-          <strong>Une opportunité par semaine, à saisir maintenant.</strong><br>
-          La newsletter finance pour entrepreneurs et indépendants qui veulent des infos qui rapportent vraiment.
+          <strong>5 minutes par jour pour ne rien manquer.</strong><br>
+          La newsletter finance pour particuliers et professionnels qui veulent une longueur d'avance sur crypto, macro et IA.
         </p>
+
+        <div class="hero-badges reveal reveal-delay-2">
+          <span class="hero-badge">⛓ Crypto</span>
+          <span class="hero-badge">📈 Macro</span>
+          <span class="hero-badge">🤖 IA</span>
+        </div>
 
         <div class="hero-actions reveal reveal-delay-3">
           <a href="#cta-final" class="btn-primary">Je m'abonne gratuitement →</a>
-          <p class="hero-sub">Gratuit · Sans spam · <span>Chaque mardi matin</span></p>
+          <p class="hero-sub">Gratuit · Sans spam · <span>Chaque matin</span></p>
         </div>
 
       </div>
