@@ -428,6 +428,74 @@
     }
     .tier-list li strong { color: var(--text); font-weight: 500; }
 
+    /* ─── EDITIONS ─────────────────────────────────────────────── */
+    #editions { background: var(--bg); }
+
+    .editions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 768px) {
+      .editions-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .edition-col {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--bg-card);
+    }
+
+    .edition-theme-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-raised);
+    }
+
+    .theme-badge {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+    }
+
+    .edition-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .edition-item {
+      padding: 20px;
+      border-bottom: 1px solid var(--border);
+      transition: background var(--transition);
+    }
+    .edition-item:last-child { border-bottom: none; }
+    .edition-item:hover { background: var(--bg-raised); }
+
+    .edition-date {
+      font-size: 0.7rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .edition-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.4;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+
+    .edition-teaser {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
     /* ─── SOCIAL PROOF ─────────────────────────────────────────── */
     #proof {
       background: var(--bg-card);
@@ -719,6 +787,73 @@
     </div>
   </section>
 
+
+  <!-- ══ EDITIONS ════════════════════════════════════════════════ -->
+  <section id="editions">
+    <div class="container">
+      <span class="section-label reveal">Dernières éditions</span>
+      <h2 class="section-title reveal">Ce qu'on a décrypté cette semaine</h2>
+      <p class="section-sub reveal">Un aperçu des dernières éditions — gratuit, sans inscription.</p>
+
+      <div class="editions-grid">
+
+        <div class="edition-col reveal">
+          <div class="edition-theme-header">
+            <span class="theme-badge">⛓ Crypto</span>
+          </div>
+          <div class="edition-list">
+            <article class="edition-item">
+              <div class="edition-date">27 mai 2026</div>
+              <div class="edition-title">Bitcoin à 90k : ce que ça change pour ton PEA</div>
+              <p class="edition-teaser">Les implications concrètes pour un investisseur particulier en 2026.</p>
+            </article>
+            <article class="edition-item">
+              <div class="edition-date">26 mai 2026</div>
+              <div class="edition-title">Altcoins Q2 : 3 signaux à surveiller</div>
+              <p class="edition-teaser">Ce que les pros regardent en ce moment sur les marchés alternatifs.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="edition-col reveal reveal-delay-1">
+          <div class="edition-theme-header">
+            <span class="theme-badge">📈 Macro</span>
+          </div>
+          <div class="edition-list">
+            <article class="edition-item">
+              <div class="edition-date">28 mai 2026</div>
+              <div class="edition-title">Taux BCE : ce que ça signifie pour ton épargne</div>
+              <p class="edition-teaser">Décryptage de la décision et impact direct sur livrets et obligations.</p>
+            </article>
+            <article class="edition-item">
+              <div class="edition-date">23 mai 2026</div>
+              <div class="edition-title">Immobilier 2026 : les niches que les pros regardent</div>
+              <p class="edition-teaser">Analyse des segments encore porteurs malgré la correction.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="edition-col reveal reveal-delay-2">
+          <div class="edition-theme-header">
+            <span class="theme-badge">🤖 IA</span>
+          </div>
+          <div class="edition-list">
+            <article class="edition-item">
+              <div class="edition-date">29 mai 2026</div>
+              <div class="edition-title">Les 5 outils IA qui font gagner du temps en 2026</div>
+              <p class="edition-teaser">Sélection testée, actionnnable dès aujourd'hui pour ta veille.</p>
+            </article>
+            <article class="edition-item">
+              <div class="edition-date">22 mai 2026</div>
+              <div class="edition-title">GPT-5 vs Claude : lequel pour ta veille business ?</div>
+              <p class="edition-teaser">Comparatif pratique pour non-techniciens, cas d'usage finance.</p>
+            </article>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- ══ SOCIAL PROOF ═════════════════════════════════════════════ -->
   <section id="proof" aria-label="Preuves sociales">
